@@ -15,10 +15,10 @@ public class Playwright_VideoRecording_28 {
                     .setRecordVideoDir(Paths.get("MyVideos/"))
                     .setRecordVideoSize(1280,720));
             // Start tracing before creating / navigating a page.
-           /* context.tracing().start(new Tracing.StartOptions()
+            context.tracing().start(new Tracing.StartOptions()
                     .setScreenshots(true)
                     .setSnapshots(true)
-                    .setSources(true));*/
+                    .setSources(true));
             Page page = context.newPage();
 
             page.navigate("https://academy.naveenautomationlabs.com/");
@@ -46,8 +46,8 @@ public class Playwright_VideoRecording_28 {
             firstName.click();
             System.out.println(firstName.textContent());*/
 
-            // Stop tracing and export it into a zip archive.
-            //context.tracing().stop(new Tracing.StopOptions().setPath(Paths.get("trace.zip")));
+        // Stop tracing and export it into a zip archive.
+        context.tracing().stop(new Tracing.StopOptions().setPath(Paths.get("trace.zip")));
         context.close();
         page.close();
         playwright.close();
