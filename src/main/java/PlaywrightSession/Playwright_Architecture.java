@@ -36,5 +36,12 @@ Client ------------------------Request----------------------------------> Server
 Client <------------------------Response--------------------------------- Server/Cloud
 Client -------------------------Connection Terminated-------------------- Server/Cloud
 
+*******************************************************************************************
+Selenium sends each command as a separate HTTP request and receives JSON responses.
+So, every action, such as opening the browser, clicking an element, or sending keys in a text box,
+is sent as a separate HTTP request. Additionally, after completion of every request,
+the connection between server and client will be terminated, which needed to be re-established for
+the next request.
+
      */
 }
